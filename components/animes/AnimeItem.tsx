@@ -41,3 +41,5 @@ const AnimeItem: React.FC<{title:string, id:string, genre:string, image:string}>
     );
     }
 export default AnimeItem;
+
+//check Record

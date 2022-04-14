@@ -28,15 +28,28 @@ const DUMMY_LIST = [
   },
 ]
 
-const HomePage:React.FC<{animes: List}> = () => {
+const HomePage:React.FC<{animes: List}> = (props) => {
   return (
   
-      <AnimeList animes={DUMMY_LIST}/>
+      <AnimeList animes={props.animes}/>
 
   )
 }
 
 export default HomePage
+
+
+export async function getStaticProps(){
+
+  return{
+    props: {
+      animes: DUMMY_LIST
+    },
+    //pre-generated on the server every 10 seconds
+     revalidate: 10,
+  }
+
+} 
 
 // import type { NextPage } from 'next'
 // import Head from 'next/head'
