@@ -26,6 +26,12 @@ const DUMMY_LIST = [
     image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2019%2F09%2F707160-anime-series-characters-misaki-mei-sakakibara-kouichi-another-1.jpg&f=1&nofb=1',
     genre: 'horror',
   },
+  {
+    id: 'a4',
+    title: 'SAMURAI CHAMPLOO',
+    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fd1%2Fa5%2F30%2Fd1a530522bd877eac9e1fa05b43e1e8e--art-school-samurai.jpg&f=1&nofb=1',
+    genre: 'Adventure, Comedy, Samurai'
+  }
 ]
 
 const HomePage:React.FC<{animes: List}> = (props) => {
