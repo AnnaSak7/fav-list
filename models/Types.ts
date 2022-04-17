@@ -1,6 +1,6 @@
 export type List = {
 
-          id: string,
+          _id: string,
           title: string,
           image: string,
           genre: string,

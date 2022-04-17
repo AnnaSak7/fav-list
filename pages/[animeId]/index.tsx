@@ -2,14 +2,15 @@
 
 import Image from 'next/image'
 import AnimeDetails from '../../components/animes/AnimeDetails'
+import {List} from '../../models/Types'
 
-const AnimeDetail= () => {
+
+const AnimeDetail:React.FC<{ image:string, title:string, genre:string}>= (props) => {
   return (
      <>
-    <AnimeDetails image='https://wallpaperwaifu.com/wp-content/uploads/2019/10/pillars-kimetsu-no-yaiba-thumb-1500x844.jpg'
-    title="Kimetsu"
-    genre="action"
-    description="Tanjiro fights vampire like demons to find a cure to save sister" 
+    <AnimeDetails image={props.image}
+    title={props.title}
+    genre={props.genre}
     />
     </>
   )
