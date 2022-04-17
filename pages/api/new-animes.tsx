@@ -27,7 +27,7 @@ const handler = async (req:NextApiRequest, res:NextApiResponse) =>{
             res.status(201).json({message: "Anime added!"})
         } 
     }catch (err){
-        console.log(err)
+        console.log('error : ',err)
     }
 }
 
