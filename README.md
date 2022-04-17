@@ -37,3 +37,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### notes
 
 [] : square brackets in file name means this will be a dynamic page
+
+
+### Connecting MongoDB
+install mongodb
+- npm install mongodb

@@ -1,56 +1,52 @@
 // domain.com/anime
 
+import {MongoClient, ObjectId} from 'mongodb'
 import Image from 'next/image'
 import AnimeDetails from '../../components/animes/AnimeDetails'
 import {List} from '../../models/Types'
 
 
-const AnimeDetail:React.FC<{ image:string, title:string, genre:string}>= (props) => {
+const AnimeDetail= (props:any) => {
   return (
      <>
-    <AnimeDetails image={props.image}
-    title={props.title}
-    genre={props.genre}
+    <AnimeDetails image={props.animeData.image}
+    title={props.animeData.title}
+    genre={props.animeData.genre}
     />
     </>
   )
 }
 
+const MONGO_URI_1:any = process.env.MONGO_URI_1
+
 export async function getStaticPaths() {
+  const client = await MongoClient.connect(MONGO_URI_1);
+  const db = client.db();
+  const animeCollection = db.collection('animes');
+  const animes = await animeCollection.find({}, { _id: 1 }).toArray()
+  client.close()
+
   return {
     fallback: false,
-    paths: [
-      {
-         params: {
-        animeId: 'a1',
-         }
-      },
-      { 
-        params: {
-        animeId: 'a2',
-      }
-    },
-      { 
-        params: {
-        animeId: 'a3',
-      }
-    }
-    ]
+    paths: animes.map(anime => ({params: {animeId: anime._id.toString()}}))
   }
 }
 
 export async function getStaticProps(context:any){
   //fetch data for a single anime
-  const animeId = context.params.animeId;
+  const animeId:any = context.params.animeId;
 
+  const client = await MongoClient.connect(MONGO_URI_1);
+  const db = client.db();
+  const animeCollection = db.collection('animes');
+  const selectedAnime:any = await animeCollection.findOne({_id: ObjectId(animeId)})
   return {
     props: {
       animeData:{
-        id: 'a1',
-        title: 'Attack on Titans',
-        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp1837557.jpg&f=1&nofb=1',
-        genre: 'action',
-
+        id: selectedAnime._id.toString(),
+        title: selectedAnime.title,
+        image: selectedAnime.image,
+        genre: selectedAnime.genre
       }
     } 
   }

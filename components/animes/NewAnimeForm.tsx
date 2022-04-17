@@ -31,15 +31,15 @@ const NewAnimeForm: React.FC<{onAddAnime:any}> = (props)=> {
 
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId='title'>
-          <Form.Label htmlFor='title'>Anime Title</Form.Label>
+          <Form.Label>Anime Title</Form.Label>
           <Form.Control type='text' required id='title' ref={titleInputRef} />
         </Form.Group>
         <Form.Group className="mb-3" controlId='image'>
-          <Form.Label htmlFor='image'>Image URL</Form.Label>
+          <Form.Label>Image URL</Form.Label>
           <Form.Control type='url' required id='image' ref={imageInputRef} />
         </Form.Group>
         <Form.Group className='mb-3' controlId='genre'>
-          <Form.Label htmlFor='genre'>Anime Genre</Form.Label>
+          <Form.Label>Anime Genre</Form.Label>
           <Form.Control type="text" required id='title' ref={genreInputRef} />
         </Form.Group>
         {/* <Form.Group className="mb-3">
