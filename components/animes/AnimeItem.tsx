@@ -1,5 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router';
+// import { Button, Card } from 'react-bootstrap';
+
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -15,7 +17,15 @@ const AnimeItem: React.FC<{title:string, id:string, genre:string, image:string}>
     };
   
     return (
-     <Card sx={{ maxWidth: 345 }}>
+      // <Card style={{maxWidth: '300px'}}>
+      //   <Card.Img variant='top' style={{maxWidth: '300px'}} src={props.image} alt={props.title} />
+      //   <Card.Body>
+      //     <Card.Title>{props.title}</Card.Title>
+      //     <Card.Text>{props.genre}</Card.Text>
+      //   </Card.Body>
+      //   <Button variant='dark' onClick={showDetailsHandler}>Show Details</Button>
+      // </Card>
+     <Card sx={{ maxWidth: '345' }}>
       <CardMedia
         component="img"
         height="140"

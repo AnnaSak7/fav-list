@@ -41,6 +41,27 @@ nav a {
 nav .logo {
   margin-right: auto;
 }
+
+.animes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: space-around
+}
+
+div.text-container h1 {
+  font-size: 3rem;
+}
+
+div.text-container p {
+  font-size: 2rem;
+}
+
 footer {
   display: block;
   text-align: center;
