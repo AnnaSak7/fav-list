@@ -5,29 +5,27 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { MongoClient } from "mongodb";
-import { runInNewContext } from "vm";
+
 
 const MONGO_URI:any = process.env.MONGO_URI
+const MONGO_URI_1:any = process.env.MONGO_URI_1
 
-type Data = {
-  name: string
-}
 
 // POST /api/new-anime
 const handler = async (  req: NextApiRequest,
-  res: NextApiResponse<Data>) =>{
+  res: NextApiResponse) =>{
     try{
         if(req.method === 'POST'){
             const data = req.body;
             
             //const { title, image, address, description } = data;
             
-            const client = await MongoClient.connect(MONGO_URI);
+            const client = await MongoClient.connect('mongodb+srv://kaiyamato:kaiyamato66@cluster0.ktifb.mongodb.net/favAnimeList?retryWrites=true&w=majority');
             const db = client.db();
             
             const animeCollection = db.collection("animes");
             
-            const result = animeCollection.insertOne(data)
+            const result = await animeCollection.insertOne(data)
 
             client.close()
 
