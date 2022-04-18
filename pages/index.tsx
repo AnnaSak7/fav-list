@@ -3,6 +3,7 @@ import React from 'react'
 import AnimeList from '../components/animes/AnimeList'
 import {List} from '../models/Types'
 import { MongoClient } from 'mongodb'
+import Head from 'next/head'
 
 
 
@@ -36,8 +37,13 @@ import { MongoClient } from 'mongodb'
 
 const HomePage:React.FC<{animes: List}> = (props) => {
   return (
-  
+  <>
+    <Head>
+      <title>Favorite Anime List</title>
+      <meta name='description' content="Your favorite anime list"></meta>
+    </Head>
       <AnimeList animes={props.animes}/>
+  </>
 
   )
 }

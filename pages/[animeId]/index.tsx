@@ -1,6 +1,7 @@
 // domain.com/anime
 
 import {MongoClient, ObjectId} from 'mongodb'
+import Head from 'next/head'
 import Image from 'next/image'
 import AnimeDetails from '../../components/animes/AnimeDetails'
 import {List} from '../../models/Types'
@@ -9,6 +10,10 @@ import {List} from '../../models/Types'
 const AnimeDetail= (props:any) => {
   return (
      <>
+     <Head>
+       <title>{props.animeData.title}</title>
+       <meta name='description' content={props.animeData.genre} />
+     </Head>
     <AnimeDetails image={props.animeData.image}
     title={props.animeData.title}
     genre={props.animeData.genre}
