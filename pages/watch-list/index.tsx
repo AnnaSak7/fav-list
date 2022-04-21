@@ -39,6 +39,11 @@ const WatchList: React.FC<{ animes: any }> = ({ animes }) => {
                   </a>
                 </Link>
                 <p>{anime.anilist_id}</p>
+                <p>
+                  Genre: {anime.genres[0]} {anime.genres[1]}
+                </p>
+                <p>Episodes: {anime.episodes_count}</p>
+                <p>Year: {anime.season_year}</p>
               </div>
             </div>
           </>
