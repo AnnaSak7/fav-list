@@ -33,7 +33,7 @@ const NewAnimePage = () => {
   return (
     <>
     <Head>
-         <title>Add a New Meetup</title>
+         <title>Add a New Anime</title>
         <meta
           name="description"
           content="Add your favorite anime to the list."
