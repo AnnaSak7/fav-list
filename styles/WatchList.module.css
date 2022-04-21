@@ -1,0 +1,18 @@
+.watchlistCard {
+  width: 70vw;
+  height: 10rem;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 5rem;
+}
+
+.imageContainer {
+  width: 10rem;
+  height: 10rem;
+  margin-right: 3rem;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+}
